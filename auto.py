@@ -1,25 +1,25 @@
-import pyautogui
-from time import sleep
-import json
-import random
+import pyautogui # automatição é python
+from time import sleep # para dar um intervalo para os comandos 
+import json # Para a trnaformação de arquivos para json
+import random # bliblioteca de randomização 
 
 
-with open('pokemon.json','r') as pokemon_json:
+with open('pokemon.json','r') as pokemon_json: # esse with abre o arquivo json, é depois da um load em json para uma variavel
     pokemons = json.load(pokemon_json)
 
 
 
-pyautogui.press('winleft')
-sleep(1)
-pyautogui.write('Edge')
-pyautogui.press('enter')
+pyautogui.press('winleft') # pressionar uma tecla
+sleep(1) # intervalo
+pyautogui.write('Edge') # escrever
+pyautogui.press('enter') 
 sleep(8)
 i = 0
 
 while i <= 30:
   
-    al = random.choice(pokemons) 
-    pyautogui.hotkey('ctrl', 'e')
+    al = random.choice(pokemons) # pega um pokemon dos 1018
+    pyautogui.hotkey('ctrl', 'e') # pressionar teclas, mais trás a possiblidade de inserir atalhos
     pyautogui.write(al)
     pyautogui.press('enter')
     sleep(4)
